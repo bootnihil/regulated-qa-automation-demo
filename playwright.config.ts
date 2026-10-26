@@ -2,6 +2,7 @@ import { defineConfig, devices } from '@playwright/test';
 
 export default defineConfig({
   testDir: './tests',
+  outputDir: './workdir/test-results',
 
   timeout: 30_000,
 
@@ -15,7 +16,7 @@ export default defineConfig({
 
   reporter: [
     ['list'],
-    ['html', { open: 'never' }]
+    ['html', { open: 'never', outputFolder: 'workdir/playwright-report' }]
   ],
 
   use: {
